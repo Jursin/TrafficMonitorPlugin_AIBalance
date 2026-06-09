@@ -29,6 +29,7 @@ BOOL COptionsDlg::OnInitDialog()
 
     SetDlgItemText(IDC_DEEPSEEK_KEY_EDIT, m_data.deepseek_key.c_str());
     SetDlgItemText(IDC_SILICONCLOUD_KEY_EDIT, m_data.siliconcloud_key.c_str());
+    SetDlgItemText(IDC_KIMI_KEY_EDIT, m_data.kimi_key.c_str());
 
     CComboBox* pCombo = (CComboBox*)GetDlgItem(IDC_REFRESH_COMBO);
     int sel = -1;
@@ -57,6 +58,8 @@ void COptionsDlg::OnBnClickedOk()
     m_data.deepseek_key = str.GetString();
     GetDlgItemText(IDC_SILICONCLOUD_KEY_EDIT, str);
     m_data.siliconcloud_key = str.GetString();
+    GetDlgItemText(IDC_KIMI_KEY_EDIT, str);
+    m_data.kimi_key = str.GetString();
 
     CComboBox* pCombo = (CComboBox*)GetDlgItem(IDC_REFRESH_COMBO);
     int sel = pCombo->GetCurSel();

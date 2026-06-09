@@ -8,6 +8,8 @@ const std::vector<BalanceProvider>& GetPresetProviders()
           L"balance_infos.0.total_balance", L"deepseek" },
         { L"SiliconCloud", L"api.siliconflow.cn", L"/v1/user/info",
           L"data.totalBalance", L"siliconcloud" },
+        { L"Kimi", L"api.moonshot.cn", L"/v1/users/me/balance",
+          L"data.available_balance", L"kimi" },
     };
     return presets;
 }
@@ -56,6 +58,8 @@ void CDataManager::LoadConfig(const std::wstring& config_dir)
     m_setting_data.deepseek_key = buf;
     GetPrivateProfileString(_T("config"), _T("siliconcloud_key"), _T(""), buf, _countof(buf), m_config_path.c_str());
     m_setting_data.siliconcloud_key = buf;
+    GetPrivateProfileString(_T("config"), _T("kimi_key"), _T(""), buf, _countof(buf), m_config_path.c_str());
+    m_setting_data.kimi_key = buf;
     m_setting_data.refresh_interval = GetPrivateProfileInt(_T("config"), _T("refresh_interval"), g_default_refresh, m_config_path.c_str());
 }
 
@@ -63,6 +67,7 @@ void CDataManager::SaveConfig() const
 {
     WritePrivateProfileString(_T("config"), _T("deepseek_key"), m_setting_data.deepseek_key.c_str(), m_config_path.c_str());
     WritePrivateProfileString(_T("config"), _T("siliconcloud_key"), m_setting_data.siliconcloud_key.c_str(), m_config_path.c_str());
+    WritePrivateProfileString(_T("config"), _T("kimi_key"), m_setting_data.kimi_key.c_str(), m_config_path.c_str());
     wchar_t buf[16];
     swprintf_s(buf, L"%d", m_setting_data.refresh_interval);
     WritePrivateProfileString(_T("config"), _T("refresh_interval"), buf, m_config_path.c_str());

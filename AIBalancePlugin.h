@@ -21,6 +21,7 @@ private:
 
     CAIBalanceItem m_deepseek;
     CAIBalanceItem m_siliconcloud;
+    CAIBalanceItem m_kimi;
     static CAIBalancePlugin m_instance;
     DWORD m_last_fetch_time{};
 };

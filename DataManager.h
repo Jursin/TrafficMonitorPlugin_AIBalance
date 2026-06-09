@@ -29,6 +29,7 @@ struct SettingData
 {
     std::wstring deepseek_key;
     std::wstring siliconcloud_key;
+    std::wstring kimi_key;
     int refresh_interval;
 };
 

@@ -9,6 +9,7 @@ CAIBalancePlugin CAIBalancePlugin::m_instance;
 CAIBalancePlugin::CAIBalancePlugin()
     : m_deepseek(GetPresetProviders()[0])
     , m_siliconcloud(GetPresetProviders()[1])
+    , m_kimi(GetPresetProviders()[2])
 {
 }
 
@@ -23,6 +24,7 @@ IPluginItem* CAIBalancePlugin::GetItem(int index)
     {
     case 0: return &m_deepseek;
     case 1: return &m_siliconcloud;
+    case 2: return &m_kimi;
     default: return nullptr;
     }
 }
@@ -44,6 +46,11 @@ void CAIBalancePlugin::DataRequired()
         FetchBalance(m_siliconcloud);
     else
         m_siliconcloud.SetBalanceFailed();
+
+    if (!g_data.m_setting_data.kimi_key.empty())
+        FetchBalance(m_kimi);
+    else
+        m_kimi.SetBalanceFailed();
 }
 
 void CAIBalancePlugin::FetchBalance(CAIBalanceItem& item)
@@ -54,6 +61,8 @@ void CAIBalancePlugin::FetchBalance(CAIBalanceItem& item)
         key = &g_data.m_setting_data.deepseek_key;
     else if (provider.id == L"siliconcloud")
         key = &g_data.m_setting_data.siliconcloud_key;
+    else if (provider.id == L"kimi")
+        key = &g_data.m_setting_data.kimi_key;
 
     if (!key || key->empty())
     {
@@ -87,7 +96,7 @@ const wchar_t* CAIBalancePlugin::GetInfo(PluginInfoIndex index)
     case TMI_DESCRIPTION: return L"显示 AI 提供商账单余额";
     case TMI_AUTHOR:      return L"Jursin";
     case TMI_COPYRIGHT:   return L"Copyright (C) 2026";
-    case TMI_VERSION:     return L"1.0";
+    case TMI_VERSION:     return L"1.1";
     case TMI_URL:         return L"https://github.com/Jursin/TrafficMonitorPlugin_AIBalance";
     default: return L"";
     }
