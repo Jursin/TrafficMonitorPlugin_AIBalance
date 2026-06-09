@@ -1,14 +1,9 @@
 ﻿#pragma once
 
-#define WIN32_LEAN_AND_MEAN             // 从 Windows 头文件中排除极少使用的内容
-//// Windows 头文件
-//#include <windows.h>
-
+#define WIN32_LEAN_AND_MEAN
 #include <SDKDDKVer.h>
-
-#include <afxwin.h>         // MFC 核心组件和标准组件
-#include <afxext.h>         // MFC 扩展
-#include <afxdisp.h>        // MFC 自动化类
+#include <afxwin.h>
+#include <afxext.h>
 
 #ifdef _UNICODE
 #if defined _M_IX86

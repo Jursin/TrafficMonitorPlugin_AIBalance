@@ -1,2 +1,16 @@
 .vs/
-docs/
+Bin/
+x64/
+Debug/
+Release/
+*.user
+*.suo
+*.ncb
+*.sdf
+*.opensdf
+*.db
+*.opendb
+*.aps
+*.VC.db
+RCa*
+RCb*
