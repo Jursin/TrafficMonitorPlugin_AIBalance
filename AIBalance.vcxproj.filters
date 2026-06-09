@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="源文件">
@@ -15,39 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="AIBalancePlugin.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="AIBalanceItem.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="BalanceProvider.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="DataManager.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="HttpHelper.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="PluginInterface.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="OptionsDlg.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="pch.cpp">
+    <ClCompile Include="AIBalanceItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AIBalancePlugin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DataManager.cpp">
@@ -56,15 +27,35 @@
     <ClCompile Include="OptionsDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="AIBalancePlugin.cpp">
+    <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="AIBalanceItem.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="BalanceProvider.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AIBalanceItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AIBalancePlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionsDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PluginInterface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="AIBalance.rc">

@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "PluginInterface.h"
-#include "BalanceProvider.h"
+#include "DataManager.h"
 
 class CAIBalanceItem : public IPluginItem
 {

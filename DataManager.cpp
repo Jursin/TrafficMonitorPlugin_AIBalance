@@ -1,13 +1,21 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "DataManager.h"
 
+const std::vector<BalanceProvider>& GetPresetProviders()
+{
+    static const std::vector<BalanceProvider> presets = {
+        { L"DeepSeek", L"api.deepseek.com", L"/user/balance",
+          L"balance_infos.0.total_balance", L"deepseek" },
+        { L"SiliconCloud", L"api.siliconflow.cn", L"/v1/user/info",
+          L"data.totalBalance", L"siliconcloud" },
+    };
+    return presets;
+}
+
 const RefreshPreset g_refresh_presets[] = {
-    { L"1 min",   60 },
-    { L"3 min",   180 },
     { L"5 min",   300 },
     { L"10 min",  600 },
     { L"30 min",  1800 },
-    { L"60 min",  3600 },
 };
 const int g_preset_count = _countof(g_refresh_presets);
 const int g_default_refresh = 300;

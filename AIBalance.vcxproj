@@ -244,9 +244,7 @@
   <ItemGroup>
     <ClInclude Include="AIBalanceItem.h" />
     <ClInclude Include="AIBalancePlugin.h" />
-    <ClInclude Include="BalanceProvider.h" />
     <ClInclude Include="DataManager.h" />
-    <ClInclude Include="framework.h" />
     <ClInclude Include="HttpHelper.h" />
     <ClInclude Include="OptionsDlg.h" />
     <ClInclude Include="pch.h" />
@@ -256,7 +254,6 @@
   <ItemGroup>
     <ClCompile Include="AIBalanceItem.cpp" />
     <ClCompile Include="AIBalancePlugin.cpp" />
-    <ClCompile Include="BalanceProvider.cpp" />
     <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="OptionsDlg.cpp" />
     <ClCompile Include="pch.cpp">
