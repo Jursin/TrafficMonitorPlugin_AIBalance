@@ -8,6 +8,7 @@
 | - | - | - |
 | DeepSeek | `https://api.deepseek.com/user/balance` | `balance_infos.0.total_balance` |
 | SiliconCloud | `https://api.siliconflow.cn/v1/user/info` | `data.balance` |
+| Kimi | `https://api.moonshot.cn/v1/users/me/balance` | `data.available_balance` |
 
 ## 推荐开发环境
 
@@ -40,6 +41,7 @@
 ```
 DeepSeek：￥x.xx
 SiliconCloud：￥xx.xx
+Kimi: ￥xx.xx
 ```
 
 ## 许可证
