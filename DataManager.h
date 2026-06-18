@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <map>
+#include <afx.h>
 
 #define g_data CDataManager::Instance()
 
@@ -27,10 +29,8 @@ extern const int g_default_refresh;
 
 struct SettingData
 {
-    std::wstring deepseek_key;
-    std::wstring siliconcloud_key;
-    std::wstring kimi_key;
-    int refresh_interval;
+    std::map<std::wstring, std::wstring> api_keys;
+    int refresh_interval{};
 };
 
 class CDataManager
@@ -42,7 +42,9 @@ private:
 public:
     static CDataManager& Instance();
     void LoadConfig(const std::wstring& config_dir);
+    void ReloadConfig();
     void SaveConfig() const;
+    const CString& StringRes(UINT id);
 
 public:
     SettingData m_setting_data;
@@ -50,4 +52,5 @@ public:
 private:
     static CDataManager m_instance;
     std::wstring m_config_path;
+    std::map<UINT, CString> m_string_table;
 };

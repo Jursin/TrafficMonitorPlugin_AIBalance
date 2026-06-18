@@ -23,13 +23,23 @@ BEGIN_MESSAGE_MAP(COptionsDlg, CDialog)
     ON_BN_CLICKED(IDOK, &COptionsDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
+static const struct { const wchar_t* id; UINT ctrl; } s_key_map[] = {
+    { L"deepseek",     IDC_DEEPSEEK_KEY_EDIT },
+    { L"kimi",         IDC_KIMI_KEY_EDIT },
+    { L"zhipu",        IDC_ZHIPU_KEY_EDIT },
+    { L"siliconcloud", IDC_SILICONCLOUD_KEY_EDIT },
+};
+
 BOOL COptionsDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-    SetDlgItemText(IDC_DEEPSEEK_KEY_EDIT, m_data.deepseek_key.c_str());
-    SetDlgItemText(IDC_SILICONCLOUD_KEY_EDIT, m_data.siliconcloud_key.c_str());
-    SetDlgItemText(IDC_KIMI_KEY_EDIT, m_data.kimi_key.c_str());
+    for (const auto& m : s_key_map)
+    {
+        auto it = m_data.api_keys.find(m.id);
+        if (it != m_data.api_keys.end())
+            SetDlgItemText(m.ctrl, it->second.c_str());
+    }
 
     CComboBox* pCombo = (CComboBox*)GetDlgItem(IDC_REFRESH_COMBO);
     int sel = -1;
@@ -54,12 +64,11 @@ BOOL COptionsDlg::OnInitDialog()
 void COptionsDlg::OnBnClickedOk()
 {
     CString str;
-    GetDlgItemText(IDC_DEEPSEEK_KEY_EDIT, str);
-    m_data.deepseek_key = str.GetString();
-    GetDlgItemText(IDC_SILICONCLOUD_KEY_EDIT, str);
-    m_data.siliconcloud_key = str.GetString();
-    GetDlgItemText(IDC_KIMI_KEY_EDIT, str);
-    m_data.kimi_key = str.GetString();
+    for (const auto& m : s_key_map)
+    {
+        GetDlgItemText(m.ctrl, str);
+        m_data.api_keys[m.id] = str.GetString();
+    }
 
     CComboBox* pCombo = (CComboBox*)GetDlgItem(IDC_REFRESH_COMBO);
     int sel = pCombo->GetCurSel();

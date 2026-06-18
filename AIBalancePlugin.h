@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "PluginInterface.h"
 #include "AIBalanceItem.h"
+#include <string>
 
 class CAIBalancePlugin : public ITMPlugin
 {
@@ -12,6 +13,7 @@ public:
 
     IPluginItem* GetItem(int index) override;
     void DataRequired() override;
+    const wchar_t* GetTooltipInfo() override;
     const wchar_t* GetInfo(PluginInfoIndex index) override;
     OptionReturn ShowOptionsDialog(void* hParent) override;
     void OnExtenedInfo(ExtendedInfoIndex index, const wchar_t* data) override;
@@ -19,11 +21,10 @@ public:
 private:
     void FetchBalance(CAIBalanceItem& item);
 
-    CAIBalanceItem m_deepseek;
-    CAIBalanceItem m_siliconcloud;
-    CAIBalanceItem m_kimi;
+    std::vector<CAIBalanceItem> m_items;
     static CAIBalancePlugin m_instance;
-    DWORD m_last_fetch_time{};
+    ULONGLONG m_last_fetch_time{};
+    std::wstring m_tooltip_info;
 };
 
 #ifdef __cplusplus

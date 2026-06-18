@@ -2,13 +2,12 @@
 
 > [TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor) 插件，用于在任务栏显示 AI 提供商账户余额。
 
-## 支持的 AI 服务
+## 支持的 AI 提供商
 
-| 提供商 | API 接口 | 余额 JSON 键 |
-| - | - | - |
-| DeepSeek | `https://api.deepseek.com/user/balance` | `balance_infos.0.total_balance` |
-| SiliconCloud | `https://api.siliconflow.cn/v1/user/info` | `data.balance` |
-| Kimi | `https://api.moonshot.cn/v1/users/me/balance` | `data.available_balance` |
+- DeepSeek
+- Kimi
+- 智谱
+- 硅基流动
 
 ## 推荐开发环境
 
@@ -24,7 +23,7 @@
 ## 开发构建
 
 1. 克隆仓库到本地
-2. 使用 Visual Studio 2026 打开项目
+2. 使用 Visual Studio 2026 打开 `AIBalance.vcxproj`
 3. 选择 `Release|x64` 配置
 4. 开始执行(不调试)（Crtl+F5）
 
@@ -36,13 +35,8 @@
 4. 右键 TrafficMonitor → AI账单余额 → 插件选项 → 配置 API Key 和刷新频率
 5. 右键 TrafficMonitor → 选项 → 任务栏窗口设置 → 显示设置：勾选需要显示的 AI提供商
 
-## 显示格式
-
-```
-DeepSeek：￥x.xx
-SiliconCloud：￥xx.xx
-Kimi: ￥xx.xx
-```
+## 文档
+- [TrafficMonitor Wiki | 插件开发指南](https://github.com/zhongyang219/TrafficMonitor/wiki/%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
 
 ## 许可证
 

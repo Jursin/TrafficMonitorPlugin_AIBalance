@@ -1,3 +1,4 @@
+docs/
 .vs/
 Bin/
 x64/
@@ -12,5 +13,4 @@ Release/
 *.opendb
 *.aps
 *.VC.db
-RCa*
-RCb*
+RC*
