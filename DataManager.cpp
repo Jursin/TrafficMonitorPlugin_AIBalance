@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "DataManager.h"
 #include "resource.h"
 
@@ -7,11 +7,13 @@ const std::vector<BalanceProvider>& GetPresetProviders()
     static const std::vector<BalanceProvider> presets = {
         { L"DeepSeek", L"api.deepseek.com", L"/user/balance",
           L"balance_infos.0.total_balance", L"deepseek" },
+        { L"Xiaomi MiMo", L"platform.xiaomimimo.com", L"/api/v1/balance",
+          L"data.balance", L"xiaomimimo", L"Cookie " },
         { L"Kimi", L"api.moonshot.cn", L"/v1/users/me/balance",
           L"data.available_balance", L"kimi" },
-        { L"Zhipu", L"www.bigmodel.cn", L"/api/biz/account/query-customer-account-report",
+        { L"智谱", L"www.bigmodel.cn", L"/api/biz/account/query-customer-account-report",
           L"data.availableBalance", L"zhipu" },
-        { L"SiliconCloud", L"api.siliconflow.cn", L"/v1/user/info",
+        { L"硅基流动", L"api.siliconflow.cn", L"/v1/user/info",
           L"data.totalBalance", L"siliconcloud" },
     };
     return presets;
@@ -48,7 +50,7 @@ const CString& CDataManager::StringRes(UINT id)
     {
         AFX_MANAGE_STATE(AfxGetStaticModuleState());
         CString str;
-        str.LoadString(id);
+        (void)str.LoadString(id);
         m_string_table[id] = str;
         return m_string_table[id];
     }

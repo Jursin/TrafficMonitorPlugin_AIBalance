@@ -25,6 +25,7 @@ END_MESSAGE_MAP()
 
 static const struct { const wchar_t* id; UINT ctrl; } s_key_map[] = {
     { L"deepseek",     IDC_DEEPSEEK_KEY_EDIT },
+    { L"xiaomimimo",   IDC_XIAOMIMIMO_KEY_EDIT },
     { L"kimi",         IDC_KIMI_KEY_EDIT },
     { L"zhipu",        IDC_ZHIPU_KEY_EDIT },
     { L"siliconcloud", IDC_SILICONCLOUD_KEY_EDIT },

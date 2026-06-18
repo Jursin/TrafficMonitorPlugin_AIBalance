@@ -4,10 +4,11 @@
 
 ## 支持的 AI 提供商
 
-- DeepSeek
-- Kimi
-- 智谱
-- 硅基流动
+- [DeepSeek](https://platform.deepseek.com/api_keys)
+- [Xiaomi MiMo](https://platform.xiaomimimo.com/console/api-keys)
+- [Kimi](https://platform.kimi.com/console/api-keys)
+- [智谱](https://bigmodel.cn/apikey/platform)
+- [硅基流动](https://cloud.siliconflow.cn/me/account/ak)
 
 ## 推荐开发环境
 

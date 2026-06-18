@@ -66,8 +66,12 @@ void CAIBalancePlugin::FetchBalance(CAIBalanceItem& item)
         return;
     }
 
-    std::wstring auth = L"Bearer " + it->second;
-    std::string response = HttpGet(provider.host, provider.path, auth);
+    std::wstring header;
+    if (provider.auth_prefix == L"Cookie ")
+        header = L"Cookie: " + it->second;
+    else
+        header = L"Authorization: Bearer " + it->second;
+    std::string response = HttpGet(provider.host, provider.path, header);
     if (response.empty())
     {
         item.SetBalanceFailed();

@@ -13,6 +13,7 @@ struct BalanceProvider
     std::wstring path;
     std::wstring balance_path;
     std::wstring id;
+    std::wstring auth_prefix = L"Bearer ";
 };
 
 const std::vector<BalanceProvider>& GetPresetProviders();

@@ -4,7 +4,7 @@
 
 #pragma comment(lib, "winhttp.lib")
 
-inline std::string HttpGet(const std::wstring& host, const std::wstring& path, const std::wstring& auth)
+inline std::string HttpGet(const std::wstring& host, const std::wstring& path, const std::wstring& header)
 {
     std::string result;
     HINTERNET hSession = WinHttpOpen(L"AIBalance/1.0", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, nullptr, nullptr, 0);
@@ -17,10 +17,9 @@ inline std::string HttpGet(const std::wstring& host, const std::wstring& path, c
         nullptr, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, WINHTTP_FLAG_SECURE);
     if (!hRequest) { WinHttpCloseHandle(hConnect); WinHttpCloseHandle(hSession); return result; }
 
-    if (!auth.empty())
+    if (!header.empty())
     {
-        std::wstring headers = L"Authorization: " + auth;
-        WinHttpAddRequestHeaders(hRequest, headers.c_str(), (DWORD)-1L, WINHTTP_ADDREQ_FLAG_ADD);
+        WinHttpAddRequestHeaders(hRequest, header.c_str(), (DWORD)-1L, WINHTTP_ADDREQ_FLAG_ADD);
     }
 
     if (WinHttpSendRequest(hRequest, WINHTTP_NO_ADDITIONAL_HEADERS, 0, WINHTTP_NO_REQUEST_DATA, 0, 0, 0)
