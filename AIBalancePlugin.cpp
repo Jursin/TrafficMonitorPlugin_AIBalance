@@ -97,7 +97,7 @@ const wchar_t* CAIBalancePlugin::GetInfo(PluginInfoIndex index)
     case TMI_DESCRIPTION: return g_data.StringRes(IDS_PLUGIN_DESCRIPTION).GetString();
     case TMI_AUTHOR:      return L"Jursin";
     case TMI_COPYRIGHT:   return L"Copyright (C) 2026";
-    case TMI_VERSION:     return L"1.1";
+    case TMI_VERSION:     return L"1.2";
     case TMI_URL:         return L"https://github.com/Jursin/TrafficMonitorPlugin_AIBalance";
     default: return L"";
     }
