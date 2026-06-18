@@ -4,5 +4,9 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Folder Name="/解决方案项/">
+    <File Path=".gitignore" />
+    <File Path="README.md" />
+  </Folder>
   <Project Path="AIBalance.vcxproj" Id="d1ca3ecc-dc32-445a-b734-c4db08d4ba34" />
 </Solution>
