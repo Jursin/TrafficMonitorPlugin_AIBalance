@@ -7,8 +7,8 @@ const std::vector<BalanceProvider>& GetPresetProviders()
     static const std::vector<BalanceProvider> presets = {
         { L"DeepSeek", L"api.deepseek.com", L"/user/balance",
           L"balance_infos.0.total_balance", L"deepseek" },
-        { L"Xiaomi MiMo", L"platform.xiaomimimo.com", L"/api/v1/balance",
-          L"data.balance", L"xiaomimimo", L"Cookie " },
+        { L"Xiaomi MiMo", L"api.xiaomimimo.com", L"/v1/platform/balance",
+          L"balance_infos.0.total_available", L"xiaomimimo" },
         { L"Kimi", L"api.moonshot.cn", L"/v1/users/me/balance",
           L"data.available_balance", L"kimi" },
         { L"智谱", L"www.bigmodel.cn", L"/api/biz/account/query-customer-account-report",

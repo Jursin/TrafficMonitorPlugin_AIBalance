@@ -10,9 +10,6 @@
 - [智谱](https://bigmodel.cn/apikey/platform)
 - [硅基流动](https://cloud.siliconflow.cn/me/account/ak)
 
-> [!note]
-> 调用 Xiaomi MiMo 接口需要自行提供 Cookie，且只有 1 天时效
-
 ## 推荐开发环境
 
 - **操作系统**: Windows 10/11
